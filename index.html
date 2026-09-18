@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jason Vasquez</title>
+<meta name="description" content="Jason Vasquez, Senior Detection Engineer at Bloomberg. Detection engineering, LLM agents for security operations, Sigma contributor, DFIR.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Jason Vasquez">
+<meta property="og:description" content="Senior Detection Engineer at Bloomberg. Detection engineering, LLM agents for security operations, Sigma contributor, DFIR.">
+<meta property="og:url" content="https://jasonvasquez.net/">
+<meta property="og:type" content="profile">
+<link rel="canonical" href="https://jasonvasquez.net/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f2937'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='17' font-weight='700' fill='%23f9fafb' text-anchor='middle'%3EJV%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #fbfaf8;
+    --fg: #1c1c1a;
+    --muted: #6b6a66;
+    --faint: #a3a29d;
+    --rule: #e5e3de;
+    --accent: #1f4e79;
+    --accent-soft: #e8eef5;
+    --max: 44rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141414;
+      --fg: #ebe9e4;
+      --muted: #a09e98;
+      --faint: #6f6d68;
+      --rule: #2a2a28;
+      --accent: #8fb6dd;
+      --accent-soft: #1d2731;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding-inline: 20px;
+    padding-block: 3rem 4rem;
+  }
+  main { max-width: var(--max); margin: 0 auto; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; text-underline-offset: 0.15em; }
+
+  /* Header */
+  header { margin-bottom: 2.5rem; }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 0.35rem; letter-spacing: -0.01em; }
+  .role { font-size: 1.1rem; margin: 0 0 0.6rem; color: var(--fg); }
+  .role span { color: var(--muted); }
+  .tagline { color: var(--muted); margin: 0 0 1rem; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; font-size: 0.95rem; color: var(--muted); margin: 0; padding: 0; list-style: none; }
+  .meta li { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .meta svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+
+  /* Sections */
+  section { margin-bottom: 2.5rem; }
+  h2 {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  p { margin: 0 0 1rem; }
+
+  /* Experience */
+  .job { margin-bottom: 1.75rem; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 0.2rem 1rem; }
+  .job-head h3 { font-size: 1.05rem; margin: 0; font-weight: 600; }
+  .job-head time, .job-head .when { color: var(--muted); font-size: 0.9rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .job-sub { color: var(--muted); font-size: 0.92rem; margin: 0.1rem 0 0.6rem; }
+  .job ul { margin: 0; padding-left: 1.15rem; }
+  .job li { margin-bottom: 0.35rem; }
+  .job li:last-child { margin-bottom: 0; }
+  .org { font-weight: 600; margin: 0 0 1.1rem; }
+  .org span { color: var(--muted); font-weight: 400; }
+
+  /* Lists */
+  .plain { list-style: none; margin: 0; padding: 0; }
+  .plain li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.2rem 1rem; padding: 0.45rem 0; border-bottom: 1px solid var(--rule); }
+  .plain li:last-child { border-bottom: 0; }
+  .plain .sub { color: var(--muted); font-size: 0.9rem; white-space: nowrap; }
+
+  /* Projects */
+  .project { margin-bottom: 1.25rem; }
+  .project:last-child { margin-bottom: 0; }
+  .project h3 { font-size: 1rem; margin: 0 0 0.25rem; font-weight: 600; }
+  .project p { margin: 0; color: var(--fg); }
+
+  /* Skills */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0; padding: 0; list-style: none; }
+  .tags li { font-size: 0.85rem; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--accent-soft); color: var(--fg); }
+
+  footer { color: var(--faint); font-size: 0.85rem; border-top: 1px solid var(--rule); padding-top: 1.25rem; }
+
+  @media (max-width: 480px) {
+    body { padding-block: 2rem 3rem; }
+    h1 { font-size: 1.7rem; }
+    .job-head time, .job-head .when, .plain .sub { white-space: normal; }
+  }
+  @media print {
+    body { background: #fff; color: #000; padding: 0; font-size: 11pt; }
+    a { color: #000; }
+    .tags li { border: 1px solid #999; background: none; }
+    section { break-inside: avoid; }
+    footer { display: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Jason Vasquez</h1>
+    <p class="role">Senior Detection Engineer <span>at Bloomberg</span></p>
+    <p class="tagline">Building LLM agents for detection engineering. Sigma contributor. Detection-as-code across Splunk and LogScale. DFIR.</p>
+    <ul class="meta">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>New York City metro area</li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/cjvasquez" rel="me">linkedin.com/in/cjvasquez</a></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1s-1.2-.3-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.5 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg><a href="https://github.com/vasquja" rel="me">github.com/vasquja</a></li>
+    </ul>
+  </header>
+
+  <section id="about">
+    <h2>About</h2>
+    <p>I'm a detection engineer at Bloomberg. I have spent 13 years there, moving from the service desk through security architecture, threat hunting, and incident response into my current role, so I write detections with a working memory of how alerts get triaged, escalated, and investigated.</p>
+    <p>Lately most of my time goes into agentic tooling for the detection lifecycle: an LLM-powered tuning agent that validates its own suggestions against live SIEM data, and an agent-driven detection engineering environment wired into our security stack.</p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <p class="org">Bloomberg L.P. <span>2012 to present</span></p>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Senior Detection Engineer</h3>
+        <time>Aug 2025 to present</time>
+      </div>
+      <p class="job-sub">Detection Engineering, Princeton, NJ (hybrid)</p>
+      <ul>
+        <li>Built and shipped an LLM-powered detection tuning agent. It reads false-positive investigation notes and validates its own suggested changes by running them in Splunk and LogScale, and saves the team an average of 3.5 hours per day on tuning work.</li>
+        <li>Built an agent-driven detection engineering environment: an LLM coding agent as the orchestration layer, connectors into the security stack, reusable skills for repeatable patterns, and subagents for research, detection writing, and false-positive analysis.</li>
+        <li>Used a data source migration to review and rework the macOS detection set, improving the 20% that were ineffective or stale.</li>
+        <li>Maintain a large detection library across a dual-SIEM environment (Splunk and LogScale); own threat and detection research and process improvement for the function.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Cyber Incident Response Team</h3>
+        <time>Sep 2021 to Aug 2025</time>
+      </div>
+      <p class="job-sub">New York City metro area (hybrid)</p>
+      <ul>
+        <li>Handled escalations from Triage and Threat Hunting; led or contributed to digital forensics and incident response.</li>
+        <li>Owned detection research and detection library maintenance (tuning, enhancing, pruning).</li>
+        <li>Onboarded an ITDR platform to extend identity-based threat detection.</li>
+        <li>Worked with Engineering to stand up an S3-compatible forensic storage platform able to retrieve artifacts from any internal cloud, simplifying artifact collection during IR.</li>
+        <li>Wrote a Python tool that flags stored hashes as malicious in the in-house threat intel platform using VirusTotal data, and pulls IoCs from VT by threat actor or other criteria.</li>
+        <li>Supported a new EDR rollout: selected training for SOC teams, integrated alerts into the SIEM, and tuned the initial detections.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Threat Hunting and Intelligence Analyst</h3>
+        <time>Aug 2019 to Sep 2021</time>
+      </div>
+      <p class="job-sub">New York, NY</p>
+      <ul>
+        <li>Threat hunting, incident handling and response, alert escalations, and testing of new rules and alerts.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Security Analyst / Architect</h3>
+        <time>Mar 2015 to Aug 2019</time>
+      </div>
+      <p class="job-sub">Security Architecture and Engineering, New York City metro area</p>
+      <ul>
+        <li>Responsible for security on the corporate LAN: investigated non-standard access requests, monitored and responded to non-standard changes, built and audited security controls, and ran security reviews on new systems and devices.</li>
+        <li>Identified gaps in security coverage and designed and built controls to close them; found vulnerabilities in systems and applications and drove remediation with owners.</li>
+        <li>Authored security procedures for infrastructure and operations teams so new systems were built and administered to policy.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Service Desk Analyst</h3>
+        <time>Nov 2012 to Mar 2015</time>
+      </div>
+      <p class="job-sub">New York City metro area</p>
+    </article>
+  </section>
+
+  <section id="projects">
+    <h2>Projects and open source</h2>
+    <article class="project">
+      <h3><a href="https://github.com/vasquja">Atomic behavioral simulation tests for Linux privilege escalation CVEs</a></h3>
+      <p>Personal detection research. Atomic, behavior-focused simulation tests for Linux local privilege escalation CVEs, including Copy Fail and Dirty Frag, written so defenders can generate the telemetry a detection needs to be validated against instead of relying on exploit PoCs.</p>
+    </article>
+    <article class="project">
+      <h3><a href="https://github.com/SigmaHQ/sigma">Sigma rules, open source contributor</a></h3>
+      <p>Ongoing contributor to Sigma, the open standard for portable, vendor-agnostic detection rules. Contributions come out of day-to-day detection engineering work across a dual-SIEM environment.</p>
+    </article>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul class="plain">
+      <li><span>GIAC Penetration Tester (GPEN)</span><span class="sub">2018</span></li>
+      <li><span>GIAC Critical Controls Certification (GCCC)</span><span class="sub"></span></li>
+      <li><span>GIAC Certified UNIX Security Administrator (GCUX)</span><span class="sub">2017</span></li>
+    </ul>
+  </section>
+
+  <section id="training">
+    <h2>Training</h2>
+    <p>Ten SANS courses, including FOR608 Enterprise-Class Incident Response and Threat Hunting and SEC401 Security Essentials.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="tags">
+      <li>Detection engineering</li>
+      <li>Detection-as-code</li>
+      <li>Splunk</li>
+      <li>LogScale</li>
+      <li>Sigma</li>
+      <li>Threat modeling</li>
+      <li>Cyber threat intelligence</li>
+      <li>Incident response</li>
+      <li>Digital forensics</li>
+      <li>Threat hunting</li>
+      <li>Python</li>
+      <li>LLM agents and tooling</li>
+      <li>EDR and ITDR</li>
+      <li>macOS and Linux detection</li>
+    </ul>
+  </section>
+
+  <footer>
+    Jason Vasquez. Last updated September 2026.
+  </footer>
+</main>
+</body>
+</html>
