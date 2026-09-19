@@ -10,6 +10,8 @@
 <meta property="og:description" content="Senior Detection Engineer at Bloomberg. Detection engineering, LLM agents for security operations, Sigma contributor, DFIR.">
 <meta property="og:url" content="https://jasonvasquez.net/">
 <meta property="og:type" content="profile">
+<meta property="og:image" content="https://jasonvasquez.net/headshot.jpg">
+<meta property="og:image:alt" content="Jason Vasquez">
 <link rel="canonical" href="https://jasonvasquez.net/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f2937'/%3E%3Ctext x='16' y='22' font-family='system-ui,sans-serif' font-size='17' font-weight='700' fill='%23f9fafb' text-anchor='middle'%3EJV%3C/text%3E%3C/svg%3E">
 <style>
@@ -51,7 +53,16 @@
   a:hover { text-decoration: underline; text-underline-offset: 0.15em; }
 
   /* Header */
-  header { margin-bottom: 2.5rem; }
+  header { display: flex; align-items: flex-start; gap: 1.75rem; margin-bottom: 2.5rem; }
+  .intro { flex: 1; min-width: 0; }
+  .headshot {
+    flex: none;
+    width: 140px;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: var(--accent-soft);
+  }
   h1 { font-size: 2rem; line-height: 1.15; margin: 0 0 0.35rem; letter-spacing: -0.01em; }
   .role { font-size: 1.1rem; margin: 0 0 0.6rem; color: var(--fg); }
   .role span { color: var(--muted); }
@@ -107,6 +118,8 @@
   @media (max-width: 480px) {
     body { padding-block: 2rem 3rem; }
     h1 { font-size: 1.7rem; }
+    header { gap: 1rem; }
+    .headshot { width: 96px; height: 120px; }
     .job-head time, .job-head .when, .plain .sub { white-space: normal; }
   }
   @media print {
@@ -114,6 +127,7 @@
     a { color: #000; }
     .tags li { border: 1px solid #999; background: none; }
     section { break-inside: avoid; }
+    .headshot { width: 28mm; height: 35mm; }
     footer { display: none; }
   }
 </style>
@@ -121,14 +135,17 @@
 <body>
 <main>
   <header>
-    <h1>Jason Vasquez</h1>
-    <p class="role">Senior Detection Engineer <span>at Bloomberg</span></p>
-    <p class="tagline">Building LLM agents for detection engineering. Sigma contributor. Detection-as-code across Splunk and LogScale. DFIR.</p>
-    <ul class="meta">
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>New York City metro area</li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/cjvasquez" rel="me">linkedin.com/in/cjvasquez</a></li>
-      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1s-1.2-.3-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.5 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg><a href="https://github.com/vasquja" rel="me">github.com/vasquja</a></li>
-    </ul>
+    <div class="intro">
+      <h1>Jason Vasquez</h1>
+      <p class="role">Senior Detection Engineer <span>at Bloomberg</span></p>
+      <p class="tagline">Building LLM agents for detection engineering. Sigma contributor. Detection-as-code across Splunk and LogScale. DFIR.</p>
+      <ul class="meta">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>New York City metro area</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg><a href="https://www.linkedin.com/in/cjvasquez" rel="me">linkedin.com/in/cjvasquez</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-.9-2.6c3.1-.3 6.4-1.5 6.4-7A5.4 5.4 0 0 0 20 4.8 5 5 0 0 0 19.9 1s-1.2-.3-3.9 1.5a13.4 13.4 0 0 0-7 0C6.3.7 5.1 1 5.1 1A5 5 0 0 0 5 4.8a5.4 5.4 0 0 0-1.5 3.7c0 5.5 3.3 6.7 6.4 7a3.4 3.4 0 0 0-.9 2.6V22"/></svg><a href="https://github.com/vasquja" rel="me">github.com/vasquja</a></li>
+      </ul>
+    </div>
+    <img class="headshot" src="headshot.jpg" width="420" height="525" alt="">
   </header>
 
   <section id="about">
