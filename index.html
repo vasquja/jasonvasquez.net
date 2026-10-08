@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jason Vasquez</title>
-<meta name="description" content="Jason Vasquez, Senior Detection Engineer at Bloomberg. Detection engineering, LLM agents for security operations, Sigma contributor, DFIR.">
+<meta name="description" content="Jason Vasquez, Senior Detection Engineer at Bloomberg, builds LLM agents that research, write, and tune detections, and designs guardrails for sensitive data.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f7f7f5" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a0c10" media="(prefers-color-scheme: dark)">
 <meta property="og:title" content="Jason Vasquez">
-<meta property="og:description" content="Senior Detection Engineer at Bloomberg. Detection engineering, LLM agents for security operations, Sigma contributor, DFIR.">
+<meta property="og:description" content="Senior Detection Engineer at Bloomberg, where he has worked since 2012. Builds LLM agents for detection engineering, designs guardrails for sensitive data, and publishes CI-tested detection research.">
 <meta property="og:url" content="https://jasonvasquez.net/">
 <meta property="og:type" content="profile">
 <meta property="og:image" content="https://jasonvasquez.net/headshot.jpg">
@@ -362,7 +362,9 @@
     }
     @page { margin: 0.5in 0.6in; }
     html { font-size: 9.5pt; }
-    body { background: #fff; line-height: 1.4; }
+    /* Contextual alternates swap some glyphs (+, :, parentheses) for private-use
+       code points, which garble the PDF's text layer for resume parsers. */
+    body { background: #fff; line-height: 1.4; font-feature-settings: "calt" 0, "case" 0; }
     body::before, .avatar, .side nav, .links, .skip, .eyebrow .dot, .stats, footer, .card .kicker, .card h3 svg, .courses span { display: none; }
     * { animation: none !important; transition: none !important; }
     a { color: inherit; }
@@ -425,7 +427,7 @@
     <img class="avatar" src="headshot.jpg" width="600" height="600" alt="">
     <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Senior Detection Engineer · Bloomberg</p>
     <h1>Jason Vasquez</h1>
-    <p class="lead">Building <strong>LLM agents for detection engineering</strong>. Sigma contributor. Detection-as-code across Splunk and LogScale. DFIR.</p>
+    <p class="lead">I build <strong>LLM agents that research, write, and tune detections</strong>, and I treat what they can reach as attack surface. 13+&nbsp;years at Bloomberg, from the service desk to detection-as-code.</p>
     <nav aria-label="Sections">
       <ul class="toc">
         <li><a href="#about">About</a></li>
@@ -446,13 +448,13 @@
   <main id="content">
     <section id="about">
       <h2>About</h2>
-      <p>I'm a detection engineer at Bloomberg. I have spent 13 years there, moving from the service desk through security architecture, threat hunting, and incident response into my current role, so I write detections with a working memory of how alerts get triaged, escalated, and investigated.</p>
-      <p>Lately most of my time goes into agentic tooling for the detection lifecycle: an LLM-powered tuning agent that validates its own suggestions against live SIEM data, and an agent-driven detection engineering environment wired into our security stack.</p>
+      <p>I joined Bloomberg in 2012 on the service desk and moved through security architecture, threat hunting, and incident response into detection engineering, so I write detections with a working memory of how alerts get triaged, escalated, and investigated.</p>
+      <p>Much of my work now goes into LLM agents for the detection lifecycle. My view: an agent should run as a least-privilege identity, see no more sensitive data than its task needs, and earn trust only when its output holds up against live data.</p>
       <ul class="stats">
-        <li><b>13<small>yrs</small></b><span>at Bloomberg, across five roles</span></li>
-        <li><b>3.5<small>h/day</small></b><span>of tuning work saved by the agent</span></li>
-        <li><b>11</b><span>SANS courses completed</span></li>
-        <li><b>3</b><span>GIAC certifications held</span></li>
+        <li><b>13+<small>yrs</small></b><span>at Bloomberg, across five roles</span></li>
+        <li><b>3.5<small>h/day</small></b><span>average team tuning time saved by the agent</span></li>
+        <li><b>19</b><span>CI-tested Sigma rules in det-eng</span></li>
+        <li><b>9</b><span>ATT&amp;CK techniques in public research</span></li>
       </ul>
     </section>
 
@@ -467,10 +469,15 @@
           </div>
           <p class="job-sub">Detection Engineering, Princeton, NJ (hybrid)</p>
           <ul>
-            <li>Built and shipped an LLM-powered detection tuning agent. It reads false-positive investigation notes and validates its own suggested changes by running them in Splunk and LogScale, and <strong>saves the team an average of 3.5 hours per day</strong> on tuning work.</li>
-            <li>Built an agent-driven detection engineering environment: an LLM coding agent as the orchestration layer, connectors into the security stack, reusable skills for repeatable patterns, and subagents for research, detection writing, and false-positive analysis.</li>
-            <li>Used a data source migration to review and rework the macOS detection set, improving the 20% that were ineffective or stale.</li>
-            <li>Maintain a large detection library across a dual-SIEM environment (Splunk and LogScale); own threat and detection research and process improvement for the function.</li>
+            <li>Conceived and built an LLM-powered detection tuning agent, from MCP tools to prompts and tests. It validates its suggested changes against live Splunk and LogScale data, <strong>saves the team an average of 3.5 hours per day</strong>, and has inspired a teammate's assistant for other detection workflows.</li>
+            <li>Engineered guardrails that limit the agent's exposure to sensitive data: a data abstraction layer that restricts what the model can query, a token vault, and a secret sanitizer.</li>
+            <li>Built an agentic detection engineering environment from connectors, reusable skills, and an LLM coding agent that orchestrates subagents for research, detection writing, and false-positive analysis.</li>
+            <li>Brought the first detections on an endpoint sensor's network telemetry from evaluation to deployment in hours, using AI assistance; comparable work took three months in 2025.</li>
+            <li>Drive the team's AI adoption, including drafting guidance on appropriate AI use for the team and the wider security operations organization; mentor detection engineers and other security colleagues.</li>
+            <li>Own the team's threat research, detection research, and process improvement; delivered same-day detection for a newly disclosed CVE, TTP analysis for a zero-day, and audit-log detection coverage for a cloud AI service.</li>
+            <li>Turned a data source migration into a full macOS detection review, reworking the 20% found ineffective or stale.</li>
+            <li>Maintain a large dual-SIEM detection library; found a query filtering pattern that could return unintended results and began correcting every affected rule.</li>
+            <li>Ran scoping hunts that became key to concluding an incident investigation.</li>
           </ul>
         </li>
         <li class="job">
@@ -480,12 +487,12 @@
           </div>
           <p class="job-sub">New York City metro area (hybrid)</p>
           <ul>
-            <li>Handled escalations from Triage and Threat Hunting; led or contributed to digital forensics and incident response.</li>
-            <li>Owned detection research and detection library maintenance (tuning, enhancing, pruning).</li>
-            <li>Onboarded an ITDR platform to extend identity-based threat detection.</li>
-            <li>Worked with Engineering to stand up an S3-compatible forensic storage platform able to retrieve artifacts from any internal cloud, simplifying artifact collection during IR.</li>
-            <li>Wrote a Python tool that flags stored hashes as malicious in the in-house threat intel platform using VirusTotal data, and pulls IoCs from VT by threat actor or other criteria.</li>
-            <li>Supported a new EDR rollout: selected training for SOC teams, integrated alerts into the SIEM, and tuned the initial detections.</li>
+            <li>Owned detection research and library maintenance: tuning, enhancing, and pruning rules.</li>
+            <li>Led and supported digital forensics and incident response on escalations from triage and threat hunting.</li>
+            <li>Partnered with engineering to stand up S3-compatible forensic storage, simplifying incident evidence collection.</li>
+            <li>Onboarded an ITDR platform, extending identity-based threat detection.</li>
+            <li>Wrote a Python tool that uses VirusTotal to flag malicious hashes in the in-house threat intelligence platform and to pull IoCs by threat actor or other criteria.</li>
+            <li>Integrated a new EDR's alerts into the SIEM, tuned its initial detections, and selected training for SOC teams.</li>
           </ul>
         </li>
         <li class="job">
@@ -493,9 +500,9 @@
             <h3>Threat Hunting and Intelligence Analyst</h3>
             <time>Aug 2019 to Sep 2021</time>
           </div>
-          <p class="job-sub">New York, NY</p>
+          <p class="job-sub">New York City metro area</p>
           <ul>
-            <li>Threat hunting, incident handling and response, alert escalations, and testing of new rules and alerts.</li>
+            <li>Hunted for threats, responded to incidents and alert escalations, and tested new detection rules and alerts.</li>
           </ul>
         </li>
         <li class="job">
@@ -505,9 +512,9 @@
           </div>
           <p class="job-sub">Security Architecture and Engineering, New York City metro area</p>
           <ul>
-            <li>Responsible for security on the corporate LAN: investigated non-standard access requests, monitored and responded to non-standard changes, built and audited security controls, and ran security reviews on new systems and devices.</li>
-            <li>Identified gaps in security coverage and designed and built controls to close them; found vulnerabilities in systems and applications and drove remediation with owners.</li>
-            <li>Authored security procedures for infrastructure and operations teams so new systems were built and administered to policy.</li>
+            <li>Secured the corporate LAN: investigated nonstandard access requests, responded to nonstandard changes, audited controls, and reviewed new systems and devices.</li>
+            <li>Identified coverage gaps, then designed and built controls to close them; found vulnerabilities in systems and applications and drove remediation with owners.</li>
+            <li>Authored security procedures so infrastructure and operations teams built and ran new systems to policy.</li>
           </ul>
         </li>
         <li class="job">
@@ -525,13 +532,13 @@
       <div class="cards">
         <article class="card">
           <p class="kicker">Detection research</p>
-          <h3><a href="https://github.com/vasquja/det-eng" data-print="github.com/vasquja/det-eng">Atomic behavioral simulation tests for Linux privilege escalation CVEs<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
-          <p>Personal detection research. Atomic, behavior-focused simulation tests for Linux local privilege escalation CVEs, including Copy Fail and Dirty Frag, written so defenders can generate the telemetry a detection needs to be validated against instead of relying on exploit PoCs.</p>
+          <h3><a href="https://github.com/vasquja/det-eng" data-print="github.com/vasquja/det-eng">det-eng: from technique research to CI-tested Sigma rules<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
+          <p>Personal, test-driven detection research on Linux and Kubernetes: 20&nbsp;experimental Sigma rules (19 tested in CI) covering 9&nbsp;ATT&amp;CK techniques, including rules for privilege escalation through kernel vulnerabilities such as CopyFail and DirtyFrag. Three technique research reports each map one technique's execution paths and look for a shared chokepoint, so one rule can cover multiple paths; two document gaps in Kubernetes audit-log detection, including direct kubelet access. Behavioral atomics in C emit the syscall pattern of an exploit or abuse primitive, then stop before any harm; CI runs each under auditd and checks that its paired rule fires.</p>
         </article>
         <article class="card">
           <p class="kicker">Open source</p>
-          <h3><a href="https://github.com/SigmaHQ/sigma" data-print="github.com/SigmaHQ/sigma">Sigma rules, open source contributor<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
-          <p>Ongoing contributor to Sigma, the open standard for portable, vendor-agnostic detection rules. Contributions come out of day-to-day detection engineering work across a dual-SIEM environment.</p>
+          <h3><a href="https://github.com/SigmaHQ/sigma/pull/5251" data-print="github.com/SigmaHQ/sigma/pull/5251">SigmaHQ contributor<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
+          <p>Merged fix to Sigma, the open standard for vendor-agnostic detection rules: tightened the Windows Ping Hex IP rule to require a hex-encoded IPv4 address (0x plus eight hex digits), not just any 0x in the ping command line.</p>
         </article>
       </div>
     </section>
@@ -539,9 +546,9 @@
     <section id="credentials">
       <h2>Certifications and training</h2>
       <ul class="certs">
-        <li><b>GPEN</b><span>GIAC Penetration Tester</span><small>SEC560 · 2018–2022</small></li>
-        <li><b>GCUX</b><span>GIAC Certified UNIX Security Administrator</span><small>SEC506 · 2017–2021</small></li>
-        <li><b>GCCC</b><span>GIAC Critical Controls Certification</span><small>SEC566 · 2017–2021</small></li>
+        <li><b>GPEN</b><span>GIAC Penetration Tester</span><small>SEC560 · held 2018 to 2022</small></li>
+        <li><b>GCUX</b><span>GIAC Certified UNIX Security Administrator</span><small>SEC506 · held 2017 to 2021</small></li>
+        <li><b>GCCC</b><span>GIAC Critical Controls Certification</span><small>SEC566 · held 2017 to 2021</small></li>
       </ul>
       <h3 class="subhead">SANS training</h3>
       <ul class="courses">
@@ -563,18 +570,32 @@
       <h2>Skills</h2>
       <div class="skill-groups">
         <div>
-          <h3>Detection</h3>
+          <h3>Detection engineering</h3>
           <ul class="tags">
-            <li>Detection engineering</li>
             <li>Detection-as-code</li>
             <li>Sigma</li>
+            <li>Detection tuning</li>
+            <li>MITRE ATT&amp;CK</li>
+            <li>Detection validation in CI</li>
+            <li>Attack simulation</li>
             <li>Threat hunting</li>
             <li>Threat modeling</li>
             <li>macOS and Linux detection</li>
           </ul>
         </div>
         <div>
-          <h3>Response and intelligence</h3>
+          <h3>AI agents</h3>
+          <ul class="tags">
+            <li>LLM agents</li>
+            <li>Agent guardrails</li>
+            <li>MCP tool design</li>
+            <li>Prompt engineering</li>
+            <li>Agent skills</li>
+            <li>Subagent orchestration</li>
+          </ul>
+        </div>
+        <div>
+          <h3>DFIR and intelligence</h3>
           <ul class="tags">
             <li>Incident response</li>
             <li>Digital forensics</li>
@@ -582,13 +603,17 @@
           </ul>
         </div>
         <div>
-          <h3>Platforms and tooling</h3>
+          <h3>Platforms and code</h3>
           <ul class="tags">
             <li>Splunk</li>
             <li>LogScale</li>
-            <li>EDR and ITDR</li>
+            <li>EDR</li>
+            <li>ITDR</li>
+            <li>auditd</li>
+            <li>Kubernetes and cloud audit logs</li>
             <li>Python</li>
-            <li>LLM agents and tooling</li>
+            <li>C</li>
+            <li>GitHub Actions</li>
           </ul>
         </div>
       </div>
