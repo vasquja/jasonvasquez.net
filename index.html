@@ -454,7 +454,7 @@
         <li><b>13+<small>yrs</small></b><span>at Bloomberg, across five roles</span></li>
         <li><b>3.5<small>h/day</small></b><span>average team tuning time saved by the agent</span></li>
         <li><b>67</b><span>CI-tested Sigma rules in det-eng</span></li>
-        <li><b>25</b><span>ATT&amp;CK techniques and sub-techniques</span></li>
+        <li><b>25</b><span>ATT&amp;CK technique IDs in det-eng</span></li>
       </ul>
     </section>
 
@@ -533,7 +533,7 @@
         <article class="card">
           <p class="kicker">Detection research</p>
           <h3><a href="https://github.com/vasquja/det-eng" data-print="github.com/vasquja/det-eng">det-eng: AI-written detections that have to prove they work<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></h3>
-          <p>Personal experiment in detection at scale: an AI agent does the detection engineering (research, attack emulation, and Sigma rules) across Linux, Kubernetes, AWS, Azure, and GCP, and an automated validation loop decides what counts as done. The repository holds 69&nbsp;experimental Sigma rules (67 tested in CI) across 25&nbsp;ATT&amp;CK techniques and sub-techniques, including rules for privilege escalation through kernel vulnerabilities such as CopyFail and DirtyFrag. Its 27&nbsp;technique research reports map 113&nbsp;execution paths and look for the chokepoint they share. In CI, each tested rule must fire on attack telemetry from a real auditd VM, a live Kubernetes cluster, or cloud audit-log fixtures. It must also stay quiet on controls such as no-op runs, broken mutant attacks, and a benign baseline that differs from the attack in one field. Near-miss test cases and a benign corpus scored against a human-approved false-positive budget keep those checks hard to game.</p>
+          <p>Personal experiment in detection at scale: an LLM agent does the detection engineering (research, attack emulation, and Sigma rules) across Linux, Kubernetes, AWS, Azure, and GCP; I pick each technique, approve false-positive budgets, and merge what passes. The repository holds 69&nbsp;experimental Sigma rules (67 tested in CI) across 25&nbsp;ATT&amp;CK techniques and sub-techniques, including kernel privilege escalation such as CopyFail and DirtyFrag. Each of its 27&nbsp;technique research reports maps one technique's execution paths and looks for a shared chokepoint. In CI, each tested rule must fire on its own safe emulation or on sample cloud audit logs of the attack. It must not fire on cases such as no-op runs, broken attack variants, or a benign baseline that differs only in the field the rule keys on. A gate fails any rule whose negative tests are trivial or that keys on the emulation's own names, which keeps the agent's checks hard to game.</p>
         </article>
         <article class="card">
           <p class="kicker">Open source</p>
